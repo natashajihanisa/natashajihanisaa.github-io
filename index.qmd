@@ -1,0 +1,124 @@
+---
+title: "PENGARUH NILAI EKSPOR TERHADAP PDB INDONESIA 2016-2020"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Natasha Jihanisa"
+date: 2024-01-19
+number-sections: true
+format:
+  html: default
+  docx: default
+editor: visual
+---
+
+## Pendahuluan
+
+![](poltekapp.jpg){fig-align="center"}
+
+### Latar belakang
+
+Latar belakang pengaruh ekspor terhadap PDB adalah sebagai berikut:Ekspor merupakan salah satu komponen utama dari Produk Domestik Bruto (PDB). Pada tahun 2022, ekspor Indonesia menyumbang sekitar 22,7% dari PDB. Hal ini menunjukkan bahwa ekspor memiliki peran yang signifikan terhadap perekonomian Indonesia. Ekspor dapat meningkatkan pendapatan nasional. Ketika barang dan jasa Indonesia dijual ke luar negeri, maka negara akan mendapatkan pendapatan dari penjualan tersebut. Pendapatan ini akan menambah pendapatan nasional dan dapat digunakan untuk membiayai berbagai keperluan pembangunan. Ekspor dapat meningkatkan lapangan kerja. Kegiatan ekspor membutuhkan tenaga kerja untuk menghasilkan barang dan jasa yang akan diekspor. Hal ini dapat menciptakan lapangan kerja baru dan meningkatkan kesempatan kerja bagi masyarakat. Ekspor dapat meningkatkan daya saing perekonomian. Ekspor menunjukkan bahwa produk Indonesia mampu bersaing di pasar internasional. Hal ini dapat meningkatkan kepercayaan dunia internasional terhadap perekonomian Indonesia.
+
+Berdasarkan latar belakang tersebut, maka dapat disimpulkan bahwa ekspor memiliki pengaruh yang positif terhadap PDB. Ekspor dapat meningkatkan pendapatan nasional, lapangan kerja, dan daya saing perekonomian.Oleh karena itu, pemerintah Indonesia terus berupaya untuk meningkatkan ekspor. Hal ini dilakukan melalui berbagai kebijakan, seperti:Pemberian subsidi dan insentif kepada eksportir, Peningkatan kualitas produk dan daya saing dan Pembukaan pasar ekspor baru. Upaya-upaya tersebut diharapkan dapat mendorong peningkatan ekspor dan memberikan manfaat yang lebih besar bagi perekonomian Indonesia.
+
+### Ruang lingkup
+
+Pengaruh langsung ekspor terhadap PDB terjadi ketika pendapatan yang diperoleh dari ekspor langsung ditambahkan ke dalam PDB. Pendapatan ini dapat berupa pendapatan dari penjualan barang dan jasa, pendapatan dari royalti, atau pendapatan dari jasa keuangan.Pengaruh tidak langsung ekspor terhadap PDB terjadi ketika kegiatan ekspor mendorong peningkatan aktivitas ekonomi lainnya, seperti produksi, konsumsi, dan investasi.
+
+### Rumusan masalah
+
+1.  Bagaimana pengaruh ekspor terhadap pendapatan nasional?
+2.  Bagaimana pengaruh ekspor terhadap pertumbuhan PDB?
+
+### Package
+
+Ini tidak wajib ada di packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+#| warning: false
+#| echo: true
+library("tidyverse")
+library("readxl")
+library("dplyr")
+```
+
+## Studi pustaka
+
+Ekspor merupakan salah satu komponen utama dari Produk Domestik Bruto (PDB). Pada tahun 2022, ekspor Indonesia menyumbang sekitar 22,7% dari PDB. Hal ini menunjukkan bahwa ekspor memiliki peran yang signifikan terhadap perekonomian Indonesia. Ekspor dapat meningkatkan pendapatan nasional, lapangan kerja, dan daya saing perekonomian. Peningkatan ekspor akan meningkatkan pendapatan nasional karena ketika barang dan jasa Indonesia dijual ke luar negeri, maka negara akan mendapatkan pendapatan dari penjualan tersebut. Pendapatan ini akan menambah pendapatan nasional dan dapat digunakan untuk membiayai berbagai keperluan pembangunan. Peningkatan ekspor juga akan meningkatkan lapangan kerja karena kegiatan ekspor membutuhkan tenaga kerja untuk menghasilkan barang dan jasa yang akan diekspor. Hal ini dapat menciptakan lapangan kerja baru dan meningkatkan kesempatan kerja bagi masyarakat.
+
+## Metode penelitian
+
+### Data
+
+Penelitian ini menggunakan data nilai ekspor dan PDB.
+
+| Tahun | Nilai Ekspor  | PDB      |
+|-------|---------------|----------|
+| 2020  | 145186211247  | 3.894,27 |
+| 2019  | 167682996134  | 4.151,23 |
+| 2018  | 180012674000  | 3.902,66 |
+| 2017  | 168828175936  | 3.839,79 |
+| 2016  | 145186211247  | 3.839,79 |
+
+```{r}
+#import dataset
+library(readxl)
+dat<-read_excel('dat.xlsx')
+head(dat)
+```
+
+```{r}
+library("ggplot2")
+library("readxl")
+library("dplyr")
+ggplot(data=dat,aes(x=eks,y=PDB)) +
+  geom_point(color="blue",size=2) + 
+  labs(title="tabel 1. Hubungan antara Nilai Ekspor dan PDB",
+       x="Nilai Ekspor",
+       y="PDB",
+       caption = "sumber: Badan Pusat Statistik") +
+  theme_classic()
+```
+
+### Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini merbaksud mencari hubungan antara hwy dan cty. Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah hwy dan $x_t$ adalah cty.
+
+## Pembahasan
+
+### Pembahasan masalah
+
+Pengaruh ekspor terhadap PDB telah menjadi salah satu topik penelitian ekonomi yang populer. Hal ini karena ekspor merupakan salah satu faktor penting yang dapat mendorong pertumbuhan ekonomi. Berdasarkan hasil penelitian yang telah dilakukan, dapat disimpulkan bahwa ekspor memiliki pengaruh yang positif terhadap PDB. Peningkatan ekspor dapat mendorong pertumbuhan PDB, meningkatkan pendapatan nasional, menciptakan lapangan kerja,dan meningkatkan daya saing perekonomian.
+
+Pengaruh ekspor terhadap pertumbuhan PDB, peningkatan ekspor dapat mendorong pertumbuhan PDB karena ekspor dapat menambah pendapatan nasional. Pendapatan nasional yang bertambah dapat digunakan untuk membiayai berbagai keperluan pembangunan, seperti infrastruktur, pendidikan, dan kesehatan.
+
+```{r}
+#import dataset
+library(readxl)
+dat<-read_excel('dat.xlsx')
+head(dat)
+```
+
+### Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+reg1<-lm(eks~PDB,data=dat)
+summary(reg1)
+```
+
+## Kesimpulan
+
+Ekspor merupakan salah satu komponen utama dari Produk Domestik Bruto (PDB). Pada tahun 2022, ekspor Indonesia menyumbang sekitar 22,7% dari PDB. Hal ini menunjukkan bahwa ekspor memiliki peran yang signifikan terhadap perekonomian Indonesia.Berdasarkan hasil penelitian yang telah dilakukan, dapat disimpulkan bahwa ekspor memiliki pengaruh yang positif terhadap PDB. Peningkatan ekspor dapat mendorong pertumbuhan PDB, meningkatkan pendapatan nasional, menciptakan lapangan kerja, dan meningkatkan daya saing perekonomian.Pengaruh ekspor terhadap pertumbuhan PDB adalah Peningkatan ekspor dapat mendorong pertumbuhan PDB karena ekspor dapat menambah pendapatan nasional. Pendapatan nasional yang bertambah dapat digunakan untuk membiayai berbagai keperluan pembangunan, seperti infrastruktur, pendidikan, dan kesehatan. Pembangunan ini dapat mendorong pertumbuhan ekonomi.Pengaruh ekspor terhadap daya saing perekonomian Peningkatan ekspor juga akan meningkatkan daya saing perekonomian karena ekspor menunjukkan bahwa produk Indonesia mampu bersaing di pasar internasional. Hal ini dapat meningkatkan kepercayaan dunia internasional terhadap perekonomian Indonesia.
+
+## Referensi
+
+<http://scholar.unand.ac.id/42633/1/2%20PDF.pdf> 
+
+<https://jurnal.kemendag.go.id/bilp/article/view/185> 
+
+<https://www.google.com/search?q=Apa%20pengaruh%20PDB%20terhadap%20pertumbuhan%20ekonomi%3F> 
